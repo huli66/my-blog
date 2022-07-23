@@ -4,22 +4,41 @@ import React from "react";
 import styled from "styled-components";
 
 const StyledNavItem = styled.div`
-  height: 20px;
-  background-color: #079bf1;
+  height: 30px;
   color: #fff;
+  user-select: none;
+  :hover::after {
+    content: "";
+    display: block;
+    height: 4px;
+    width: 10%;
+    background: rgba(0, 0, 0, 0.5);
+    transform: translateY(4px);
+    animation: changeWidth 0.5s;
+    animation-fill-mode: forwards;
+  }
   > div {
     color: black;
+  }
+  @keyframes changeWidth {
+    from {
+      width: 0;
+    }
+    to {
+      width: 100%;
+    }
   }
 `;
 
 const StyledNav = styled.nav`
   height: 30px;
+  min-width: 200px;
   background-color: #079bf1;
   color: #fff;
   display: flex;
   justify-content: space-around;
   ${StyledNavItem}:not(:last-child) {
-    margin-right: 20px;
+    margin-right: 14px;
   }
 `;
 
@@ -66,7 +85,12 @@ const Nav = () => {
   return (
     <StyledNav>
       {menu.map(({ title, path }) => (
-        <NavItem title={title} currentPage={currentPage} link={path} />
+        <NavItem
+          key={title}
+          title={title}
+          currentPage={currentPage}
+          link={path}
+        />
       ))}
     </StyledNav>
   );

@@ -1,5 +1,6 @@
 import React from "react";
 import Link from "next/link";
+import { StyledPostItem, StyledTag } from "./style";
 
 export interface PostListItemProps {
   postsDir: string;
@@ -21,18 +22,20 @@ const PostListItem = ({
   const link = `/${postsDir}/${id}`;
 
   return (
-    <article>
+    <StyledPostItem>
       <h2>
         <Link href={link}>
-          <a>博客{title}</a>
+          <a>{title}</a>
         </Link>
       </h2>
-      <p> 发布时间 {dateYMD}</p>
       <p>{description}</p>
-      {tags?.map((tag) => (
-        <span>{tag}</span>
-      ))}
-    </article>
+      <div>
+        <span>发布时间 {dateYMD}</span>
+        {tags?.map((tag) => (
+          <StyledTag>{`- ${tag}`}</StyledTag>
+        ))}
+      </div>
+    </StyledPostItem>
   );
 };
 

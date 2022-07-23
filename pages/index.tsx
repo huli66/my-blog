@@ -1,21 +1,26 @@
 import type { NextPage } from "next";
-import Head from "next/head";
-import Image from "next/image";
 import Link from "next/link";
 import Layout from "../components/layout";
-import styles from "../styles/Home.module.css";
+import { StyledHome } from "./style";
 
 const Home: NextPage = () => {
   return (
-    <Layout title="Home">
-      <main className={styles.main}>
-        <Link href="/home">
-          <a>Home</a>
-        </Link>
-        <Link href="/posts">
-          <a>BLog</a>
-        </Link>
-      </main>
+    <Layout title="狐狸🍁">
+      <StyledHome>
+        <div>假装现在有首页</div>
+        <p>
+          <Link href="/home">
+            <a>Home</a>
+          </Link>
+        </p>
+        <p>
+          <Link href="/posts">
+            <a>BLog</a>
+          </Link>
+        </p>
+        <div>老板你那么帅，那不打赏两块？</div>
+        <img src="/wechat.png" alt="收款码" width={200} height={200} />
+      </StyledHome>
     </Layout>
   );
 };

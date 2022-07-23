@@ -2,6 +2,7 @@ import React from "react";
 import { FileDataProps, getAllFiles } from "../../utils/posts-md";
 import PostListItem from "../../components/post-list-item";
 import Layout from "../../components/layout";
+import { StyledPostList } from "./style";
 
 const postsDir = "posts";
 
@@ -10,7 +11,7 @@ const PostsList = ({ posts }: { posts: Array<FileDataProps> }) => {
   return (
     <div>
       <Layout title="博客列表页">
-        <ul>
+        <StyledPostList>
           {posts?.map((post) => {
             const { id, title, date, description, content, tags, keywords } =
               post;
@@ -26,7 +27,7 @@ const PostsList = ({ posts }: { posts: Array<FileDataProps> }) => {
               />
             );
           })}
-        </ul>
+        </StyledPostList>
       </Layout>
     </div>
   );
