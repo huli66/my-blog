@@ -5,7 +5,7 @@ import MarkNav from "markdown-navbar"; // https://github.com/parksben/markdown-n
 import "markdown-navbar/dist/navbar.css";
 import "github-markdown-css";
 import Layout from "../../components/layout";
-import { StyledBlog } from "./style";
+import { StyledBlog } from "../../styles/posts-style";
 import { useState } from "react";
 
 interface PostProps {

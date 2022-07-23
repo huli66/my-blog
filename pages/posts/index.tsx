@@ -2,7 +2,7 @@ import React from "react";
 import { FileDataProps, getAllFiles } from "../../utils/posts-md";
 import PostListItem from "../../components/post-list-item";
 import Layout from "../../components/layout";
-import { StyledPostList } from "./style";
+import { StyledPostList } from "../../styles/posts-style";
 
 const postsDir = "posts";
 
